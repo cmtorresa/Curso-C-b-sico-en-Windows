@@ -1,0 +1,15 @@
+C:\Users\ASUS\platziDotNet\CoreEscuela\bin\Debug\net6.0\CoreEscuela.exe
+C:\Users\ASUS\platziDotNet\CoreEscuela\bin\Debug\net6.0\CoreEscuela.deps.json
+C:\Users\ASUS\platziDotNet\CoreEscuela\bin\Debug\net6.0\CoreEscuela.runtimeconfig.json
+C:\Users\ASUS\platziDotNet\CoreEscuela\bin\Debug\net6.0\CoreEscuela.dll
+C:\Users\ASUS\platziDotNet\CoreEscuela\bin\Debug\net6.0\CoreEscuela.pdb
+C:\Users\ASUS\platziDotNet\CoreEscuela\obj\Debug\net6.0\CoreEscuela.csproj.AssemblyReference.cache
+C:\Users\ASUS\platziDotNet\CoreEscuela\obj\Debug\net6.0\CoreEscuela.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\platziDotNet\CoreEscuela\obj\Debug\net6.0\CoreEscuela.AssemblyInfoInputs.cache
+C:\Users\ASUS\platziDotNet\CoreEscuela\obj\Debug\net6.0\CoreEscuela.AssemblyInfo.cs
+C:\Users\ASUS\platziDotNet\CoreEscuela\obj\Debug\net6.0\CoreEscuela.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\platziDotNet\CoreEscuela\obj\Debug\net6.0\CoreEscuela.dll
+C:\Users\ASUS\platziDotNet\CoreEscuela\obj\Debug\net6.0\refint\CoreEscuela.dll
+C:\Users\ASUS\platziDotNet\CoreEscuela\obj\Debug\net6.0\CoreEscuela.pdb
+C:\Users\ASUS\platziDotNet\CoreEscuela\obj\Debug\net6.0\CoreEscuela.genruntimeconfig.cache
+C:\Users\ASUS\platziDotNet\CoreEscuela\obj\Debug\net6.0\ref\CoreEscuela.dll
