@@ -1,0 +1,15 @@
+C:\Users\ASUS\platziDotNet\Etapa1\bin\Debug\net6.0\Etapa1.exe
+C:\Users\ASUS\platziDotNet\Etapa1\bin\Debug\net6.0\Etapa1.deps.json
+C:\Users\ASUS\platziDotNet\Etapa1\bin\Debug\net6.0\Etapa1.runtimeconfig.json
+C:\Users\ASUS\platziDotNet\Etapa1\bin\Debug\net6.0\Etapa1.dll
+C:\Users\ASUS\platziDotNet\Etapa1\bin\Debug\net6.0\Etapa1.pdb
+C:\Users\ASUS\platziDotNet\Etapa1\obj\Debug\net6.0\Etapa1.csproj.AssemblyReference.cache
+C:\Users\ASUS\platziDotNet\Etapa1\obj\Debug\net6.0\Etapa1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\platziDotNet\Etapa1\obj\Debug\net6.0\Etapa1.AssemblyInfoInputs.cache
+C:\Users\ASUS\platziDotNet\Etapa1\obj\Debug\net6.0\Etapa1.AssemblyInfo.cs
+C:\Users\ASUS\platziDotNet\Etapa1\obj\Debug\net6.0\Etapa1.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\platziDotNet\Etapa1\obj\Debug\net6.0\Etapa1.dll
+C:\Users\ASUS\platziDotNet\Etapa1\obj\Debug\net6.0\refint\Etapa1.dll
+C:\Users\ASUS\platziDotNet\Etapa1\obj\Debug\net6.0\Etapa1.pdb
+C:\Users\ASUS\platziDotNet\Etapa1\obj\Debug\net6.0\Etapa1.genruntimeconfig.cache
+C:\Users\ASUS\platziDotNet\Etapa1\obj\Debug\net6.0\ref\Etapa1.dll
