@@ -8,6 +8,7 @@ internal class Program
         var escuela = new Escuela("Platzi School", 2012);
         escuela.Country="Colombia";
         escuela.City="Bogotá";
-        Console.WriteLine(escuela.Name);
+        escuela.TipoEscuela = TiposEscuela.primaria;
+        Console.WriteLine(escuela);
     }
 }

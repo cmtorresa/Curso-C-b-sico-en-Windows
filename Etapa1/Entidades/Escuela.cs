@@ -3,7 +3,7 @@ namespace CoreEscuela.Entidades
     class Escuela 
     {
 
-        string name;
+        string? name;
         public string Name 
         {
             get {return "Copia de: " + name;} //De esta forma alguien podria preguntar por nombre. Pero no asignarlo.
@@ -12,9 +12,11 @@ namespace CoreEscuela.Entidades
 
         public int FundationYear {get;set;} // Hace lo mismo que la parte de arriba
 
-        public string Country { get; set; }
+        public string? Country { get; set; }
 
-        public string City { get; set; }
+        public string? City { get; set; }
+
+        public TiposEscuela TipoEscuela {get;set;}
 
         /*public Escuela(string name, int year)
         {
@@ -23,6 +25,11 @@ namespace CoreEscuela.Entidades
         }*/
 
         public Escuela(string name, int year) => (Name, FundationYear) = (name, year); // Sintaxis del método constructor abreviado
+
+        public override string ToString()
+        {
+            return $"Nombre: {Name}, Tipo Escuela: {TipoEscuela} \nPaís: {Country}, Ciudad: {City}";
+        }
 
 
     }
