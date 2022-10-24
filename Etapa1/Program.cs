@@ -5,10 +5,8 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var escuela = new Escuela("Platzi School", 2012);
-        escuela.Country="Colombia";
-        escuela.City="Bogotá";
-        escuela.TipoEscuela = TiposEscuela.primaria;
+        var escuela = new Escuela("Platzi School", 2012,TiposEscuela.primaria, pais:"Colombia", ciudad:"Bogotá");
+        
         Console.WriteLine(escuela);
     }
 }

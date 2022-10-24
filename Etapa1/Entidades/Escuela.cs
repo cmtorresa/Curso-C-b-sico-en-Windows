@@ -26,6 +26,13 @@ namespace CoreEscuela.Entidades
 
         public Escuela(string name, int year) => (Name, FundationYear) = (name, year); // Sintaxis del método constructor abreviado
 
+        public Escuela(string name, int year, TiposEscuela tipo, string pais="", string ciudad="") 
+        {
+           (Name, FundationYear) = (name, year);
+           Country=pais;
+           City=ciudad; //Similar a this.ciudad=ciudad;... en esto hago referencia de la clase City, no de la propiedad del constructor.    
+        }
+
         public override string ToString()
         {
             return $"Nombre: {Name}, Tipo Escuela: {TipoEscuela} \nPaís: {Country}, Ciudad: {City}";
