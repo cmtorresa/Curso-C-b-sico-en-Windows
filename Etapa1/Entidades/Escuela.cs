@@ -18,6 +18,8 @@ namespace CoreEscuela.Entidades
 
         public TiposEscuela TipoEscuela {get;set;}
 
+        public Curso[] Cursos {get;set;} // atributo nuevo para escuela
+
         /*public Escuela(string name, int year)
         {
             this.name = name; // El primer name,luego del trhis es miembro de la clase

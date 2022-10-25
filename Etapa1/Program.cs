@@ -7,9 +7,13 @@ internal class Program
     {
         var escuela = new Escuela("Platzi School", 2012,TiposEscuela.primaria, pais:"Colombia", ciudad:"Bogotá");
 
-        var arregloCursos = new Curso[3];// Se debe poner la cantidad de posiciones que va a tener la matriz.
+        escuela.Cursos = new Curso[]// Cambio esta Curso[] arregloCursos, por escuela.Cursos
+        {
+            new Curso() {Nombre="101"},new Curso() {Nombre="201"},new Curso() {Nombre="301"}
+        };
 
-        arregloCursos[0] =new Curso() {
+        
+        /*arregloCursos[0] =new Curso() {
             Nombre="101"
         };
         arregloCursos[1] =new Curso() {
@@ -17,12 +21,24 @@ internal class Program
         };
         arregloCursos[2]=new Curso() {
             Nombre="301"
-        };
+        };*/
         
         Console.WriteLine(escuela);
         System.Console.WriteLine("===============================\n");
-        imprimirCursos(arregloCursos);
+        imprimirCusrosEscuela(escuela); // Introducir esta mejor funció para imprimir código
        
+    }
+
+    private static void imprimirCusrosEscuela(Escuela escuela)
+    {
+        Console.WriteLine("=========================");
+        Console.WriteLine($"Cursos de la Escuela");
+        Console.WriteLine("=========================");
+
+        foreach (var curso in escuela.Cursos)
+        {
+           Console.WriteLine($"Nombre: {curso.Nombre}, con ID: {curso.UniqueId} Unica referencia" );    
+        }
     }
 
     private static void imprimirCursos(Curso[] arregloCursos)
