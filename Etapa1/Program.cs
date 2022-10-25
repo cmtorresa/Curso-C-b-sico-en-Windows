@@ -6,21 +6,39 @@ internal class Program
     private static void Main(string[] args)
     {
         var escuela = new Escuela("Platzi School", 2012,TiposEscuela.primaria, pais:"Colombia", ciudad:"Bogotá");
-        var curso1 =new Curso() {
+
+        var arregloCursos = new Curso[3];// Se debe poner la cantidad de posiciones que va a tener la matriz.
+
+        arregloCursos[0] =new Curso() {
             Nombre="101"
         };
-        var curso2 =new Curso() {
+        arregloCursos[1] =new Curso() {
             Nombre="201"
         };
-        var curso3 =new Curso() {
+        arregloCursos[2]=new Curso() {
             Nombre="301"
         };
+        
         Console.WriteLine(escuela);
-        System.Console.WriteLine("===============================");
-        Console.WriteLine(curso1.Nombre + ", " + curso1.UniqueId);
-        System.Console.WriteLine("===============================");
-        Console.WriteLine(curso2.Nombre + ", " + curso2.UniqueId);
-        System.Console.WriteLine("===============================");
-        Console.WriteLine(curso3.Nombre + ", " + curso3.UniqueId);
+        System.Console.WriteLine("===============================\n");
+        imprimirCursos(arregloCursos);
+       
+    }
+
+    private static void imprimirCursos(Curso[] arregloCursos)
+    {
+        int contador =0;
+        /*while (contador<arregloCursos.Length)
+        {
+            Console.WriteLine($"Nombre: {arregloCursos[contador].Nombre}, con ID: {arregloCursos[contador].UniqueId} Unica referencia" );    
+            contador++;
+        }*/
+
+        foreach (var item in arregloCursos)
+        {
+           Console.WriteLine($"Nombre: {arregloCursos[contador].Nombre}, con ID: {arregloCursos[contador].UniqueId} Unica referencia" );    
+            contador++; 
+        }
+        
     }
 }
