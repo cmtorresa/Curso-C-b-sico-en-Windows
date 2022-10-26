@@ -7,21 +7,27 @@ internal class Program
     {
         var escuela = new Escuela("Platzi School", 2012,TiposEscuela.primaria, pais:"Colombia", ciudad:"Bogotá");
 
-        escuela.Cursos = new Curso[]// Cambio esta Curso[] arregloCursos, por escuela.Cursos
+        escuela.Cursos = new List<Curso>() // Inclusión de la lista como constructor.
         {
-            new Curso() {Nombre="101"},new Curso() {Nombre="201"},new Curso() {Nombre="301"}
+            new Curso() {Nombre="101", Jornada=TiposJornada.Mañana},
+            new Curso() {Nombre="201", Jornada=TiposJornada.Mañana},
+            new Curso() {Nombre="301", Jornada=TiposJornada.Mañana}
         };
 
-        
-        /*arregloCursos[0] =new Curso() {
-            Nombre="101"
+        escuela.Cursos.Add(new Curso(){Nombre="102", Jornada=TiposJornada.Tarde});
+        escuela.Cursos.Add(new Curso(){Nombre="202", Jornada=TiposJornada.Tarde});
+
+        var otraColecion =new List<Curso>() // Inclusión de la lista como constructor.
+        {
+            new Curso() {Nombre="401", Jornada=TiposJornada.Mañana},
+            new Curso() {Nombre="501", Jornada=TiposJornada.Mañana},
+            new Curso() {Nombre="502", Jornada=TiposJornada.Tarde}
         };
-        arregloCursos[1] =new Curso() {
-            Nombre="201"
-        };
-        arregloCursos[2]=new Curso() {
-            Nombre="301"
-        };*/
+
+        otraColecion.Clear();
+
+        escuela.Cursos.AddRange(otraColecion);
+
         
         Console.WriteLine(escuela);
         System.Console.WriteLine("===============================\n");
