@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using CoreEscuala.Util;
 using CoreEscuela;
 using CoreEscuela.Entidades;
 
@@ -10,6 +11,8 @@ internal class Program
         engine.Inicializar();
               
         System.Console.WriteLine("Bienvenido a la escuela\n===============================\n");
+        Printer.DibujarLinea(10);
+        Printer.DibujarLinea(20);
         imprimirCusrosEscuela(engine.Escuela); // Introducir esta mejor funció para imprimir código
 
              
@@ -17,7 +20,6 @@ internal class Program
 
     private static void imprimirCusrosEscuela(Escuela escuela)
     {
-        Console.WriteLine("=========================");
         Console.WriteLine($"Cursos de la Escuela");
         Console.WriteLine("=========================");
 

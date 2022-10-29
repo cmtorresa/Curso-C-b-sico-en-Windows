@@ -400,9 +400,9 @@ FodyWeavers.xsd
 *.sln.iml
 
 #Folders
-consoleapp
-FunCsWithDotNetCore
-webapi
-CoreEscuela
+consoleapp/
+FunCsWithDotNetCore/
+webapi/
+CoreEscuela/
 
 # End of https://www.toptal.com/developers/gitignore/api/csharp
