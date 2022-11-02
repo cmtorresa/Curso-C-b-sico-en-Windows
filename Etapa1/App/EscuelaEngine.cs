@@ -1,8 +1,5 @@
-using CoreEscuala.Entidades;
-using CoreEscuela.Entidades;
 
-
-namespace CoreEscuela
+namespace CoreEscuela.Entidades
 {
     public class EscuelaEngine
     {
@@ -18,7 +15,6 @@ namespace CoreEscuela
 
         private void CargarEvaluaciones()
         {
-               
             foreach (var curso in Escuela.Cursos)
             {
                 foreach (var asignatura in curso.Asignaturas)
@@ -50,12 +46,12 @@ namespace CoreEscuela
         {
             foreach (var curso in Escuela.Cursos)
             {
-                List<CoreEscuala.Entidades.Asignatura> ListaAsignaturas = new List<CoreEscuala.Entidades.Asignatura>()
+                List<CoreEscuela.Entidades.Asignatura> ListaAsignaturas = new List<CoreEscuela.Entidades.Asignatura>()
                 {
-                    new CoreEscuala.Entidades.Asignatura {Nombre="Matematicas"},
-                    new CoreEscuala.Entidades.Asignatura {Nombre="Ciencias"},
-                    new CoreEscuala.Entidades.Asignatura {Nombre="Castellano"},
-                    new CoreEscuala.Entidades.Asignatura {Nombre="Sociales"}
+                    new CoreEscuela.Entidades.Asignatura {Nombre="Matematicas"},
+                    new CoreEscuela.Entidades.Asignatura {Nombre="Ciencias"},
+                    new CoreEscuela.Entidades.Asignatura {Nombre="Castellano"},
+                    new CoreEscuela.Entidades.Asignatura {Nombre="Sociales"}
                 };
                 curso.Asignaturas = ListaAsignaturas;
             }
@@ -70,7 +66,7 @@ namespace CoreEscuela
             var ListaAlumnos =  from n1 in nombre1
                                 from n2 in nombre2
                                 from a1 in apellido1
-                                select new CoreEscuala.Entidades.Alumno { Nombre= $" {n1} {n2} {a1}"};
+                                select new CoreEscuela.Entidades.Alumno { Nombre= $" {n1} {n2} {a1}"};
             return ListaAlumnos.OrderBy((al)=>al.UniqueId).Take(cantidad).ToList();
         }
 

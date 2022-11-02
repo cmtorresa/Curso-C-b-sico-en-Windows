@@ -10,12 +10,13 @@ internal class Program
         var engine = new EscuelaEngine();
         engine.Inicializar();
               
-        System.Console.WriteLine("Bienvenido a la escuela\n===============================\n");
+        System.Console.WriteLine("\n===============================\n Bienvenido a la escuela\n===============================\n");
         Printer.DibujarLinea(10);
         Printer.DibujarLinea(20);
+        System.Console.Beep(1000,2000);
         imprimirCusrosEscuela(engine.Escuela); // Introducir esta mejor funció para imprimir código
 
-             
+        //var obj = new ObjetoEscuelaBase();             
     }
 
     private static void imprimirCusrosEscuela(Escuela escuela)

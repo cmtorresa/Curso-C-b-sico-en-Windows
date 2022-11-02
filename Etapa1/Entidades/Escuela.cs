@@ -2,15 +2,17 @@ using System.Collections.Generic;
 
 namespace CoreEscuela.Entidades 
 {
-    public class Escuela 
+    public class Escuela:ObjetoEscuelaBase
     {
 
         string? name;
+        /*
+        La siguiente propiedad se quita porque hereda de ObjetoEscuelaBase
         public string Name 
         {
             get {return "Copia de: " + name;} //De esta forma alguien podria preguntar por nombre. Pero no asignarlo.
             set {name=value.ToUpper();} // de esta forma pongo el nombre en mayuscula.
-        }
+        }*/
 
         public int FundationYear {get;set;} // Hace lo mismo que la parte de arriba
 
@@ -28,18 +30,18 @@ namespace CoreEscuela.Entidades
             FundationYear = year;
         }*/
 
-        public Escuela(string name, int year) => (Name, FundationYear) = (name, year); // Sintaxis del método constructor abreviado
+        public Escuela(string name, int year) => (Nombre, FundationYear) = (name, year); // Sintaxis del método constructor abreviado
 
         public Escuela(string name, int year, TiposEscuela tipo, string pais="", string ciudad="") 
         {
-           (Name, FundationYear) = (name, year);
+           (Nombre, FundationYear) = (name, year);
            Country=pais;
            City=ciudad; //Similar a this.ciudad=ciudad;... en esto hago referencia de la clase City, no de la propiedad del constructor.    
         }
 
         public override string ToString()
         {
-            return $"Nombre: {Name}, Tipo Escuela: {TipoEscuela} \nPaís: {Country}, Ciudad: {City}";
+            return $"Nombre: {Nombre}, Tipo Escuela: {TipoEscuela} \nPaís: {Country}, Ciudad: {City}";
         }
 
 
