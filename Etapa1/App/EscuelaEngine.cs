@@ -1,7 +1,7 @@
 
 namespace CoreEscuela.Entidades
 {
-    public class EscuelaEngine
+    public sealed class EscuelaEngine // Una clase sellada no permite que otros hereden de ella. Pero psi permite crear instancias
     {
         public Escuela Escuela { get; set; }
         
@@ -40,6 +40,25 @@ namespace CoreEscuela.Entidades
                 }
                 
             }
+        }
+
+        public List<ObjetoEscuelaBase> GetObjetoEscuela()
+        {
+            var listaObj = new List<ObjetoEscuelaBase> ();
+            listaObj.Add(Escuela);
+            listaObj.AddRange(Escuela.Cursos);
+                foreach (var curso in Escuela.Cursos)
+                {
+                    listaObj.AddRange(curso.Asignaturas);
+                    listaObj.AddRange(curso.Alumnos);
+
+                    foreach (var alumno in curso.Alumnos)
+                    {
+                        listaObj.AddRange(alumno.Evaluaciones);
+                    }
+                }
+            return listaObj;
+
         }
 
         private void CargarAsignatura()

@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using CoreEscuela.Util;
 
 namespace CoreEscuela.Entidades 
 {
-    public class Escuela:ObjetoEscuelaBase
+    public class Escuela:ObjetoEscuelaBase, ILugar
     {
 
         string? name;
@@ -23,6 +24,7 @@ namespace CoreEscuela.Entidades
         public TiposEscuela TipoEscuela {get;set;}
 
         public List<Curso> Cursos {get;set;} // Este se cambia a lista, se genera el using.collection generic con .+ctrl
+        public string Direccion { get; set; }
 
         /*public Escuela(string name, int year)
         {
@@ -44,6 +46,16 @@ namespace CoreEscuela.Entidades
             return $"Nombre: {Nombre}, Tipo Escuela: {TipoEscuela} \nPaís: {Country}, Ciudad: {City}";
         }
 
-
+        public void LimpiarLugar()
+        {
+            Printer.DibujarLinea();
+            Console.WriteLine("Limpiando Escuela... ");
+                foreach (var curso in Cursos)
+                {
+                    curso.LimpiarLugar();
+                }
+            Printer.WriteTitle($"Escuela {Nombre} limpia"); // Imprimir mejor con la diferenciación de ser un título importante.
+            Printer.Beep(1000,cantidad:3);
+        }
     }
 }
