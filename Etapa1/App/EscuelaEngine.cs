@@ -1,4 +1,6 @@
 
+using CoreEscuela.Util;
+
 namespace CoreEscuela.Entidades
 {
     public sealed class EscuelaEngine // Una clase sellada no permite que otros hereden de ella. Pero psi permite crear instancias
@@ -42,25 +44,85 @@ namespace CoreEscuela.Entidades
             }
         }
 
-        public List<ObjetoEscuelaBase> GetObjetoEscuela()
+        public void ImprimirDiccionario(Dictionary<LlaveDiccionario,IEnumerable<ObjetoEscuelaBase>> dic) 
         {
+            foreach (var obj in dic)
+            {
+                Printer.WriteTitle(obj.Key.ToString());
+
+                foreach (var val in obj.Value)
+                {
+                    Console.WriteLine(val);                    
+                }
+            }
+
+        }
+
+        public Dictionary<LlaveDiccionario,IEnumerable<ObjetoEscuelaBase>> GetDiccionarioObjetos() 
+        {
+            
+            var diccionario= new Dictionary<LlaveDiccionario,IEnumerable<ObjetoEscuelaBase>>();
+
+            diccionario.Add(LlaveDiccionario.Escuela, new[] {Escuela});
+            diccionario.Add(LlaveDiccionario.Cursos, Escuela.Cursos.Cast<ObjetoEscuelaBase>());
+            var listatmp = new List<Evaluacion>();
+            var listatmpas = new List<Asignatura>();
+            var listatmpal = new List<Alumno>();
+            foreach (var cur in Escuela.Cursos)
+            {
+                listatmpas.AddRange(cur.Asignaturas);
+                listatmpal.AddRange(cur.Alumnos);
+
+                foreach (var alum in cur.Alumnos)
+                {
+                    listatmp.AddRange(alum.Evaluaciones);
+                }
+            }
+            diccionario[LlaveDiccionario.Cursos] = Escuela.Cursos.Cast<ObjetoEscuelaBase>();
+            diccionario.Add(LlaveDiccionario.Asignaturas, listatmpas.Cast<ObjetoEscuelaBase>());
+            diccionario.Add(LlaveDiccionario.Alumno, listatmpal.Cast<ObjetoEscuelaBase>());
+            diccionario.Add(LlaveDiccionario.Evaluacion, listatmp.Cast<ObjetoEscuelaBase>());
+
+            return diccionario;
+        }
+
+        /*public List<ObjetoEscuelaBase> GetObjetoEscuela(
+            out int conteoEvaluaciones,
+            out int conteoAlumnos,
+            out int conteoCursos,
+            out int conteoAsignaturas,
+            bool traeEvaluaciones = true,
+            bool traeAlumno = true,
+            bool traeCursos = true,
+            bool traeAsignaturas = true
+            )
+        {
+            conteoEvaluaciones=0;
+            conteoAsignaturas=0;
+            conteoAlumnos=0;
             var listaObj = new List<ObjetoEscuelaBase> ();
             listaObj.Add(Escuela);
             listaObj.AddRange(Escuela.Cursos);
+            conteoCursos=Escuela.Cursos.Count;
                 foreach (var curso in Escuela.Cursos)
                 {
+                    conteoAsignaturas += curso.Asignaturas.Count;
                     listaObj.AddRange(curso.Asignaturas);
+                    conteoAlumnos+= curso.Alumnos.Count;
                     listaObj.AddRange(curso.Alumnos);
 
-                    foreach (var alumno in curso.Alumnos)
+                    if (traeEvaluaciones)
                     {
-                        listaObj.AddRange(alumno.Evaluaciones);
+                        foreach (var alumno in curso.Alumnos)
+                        {
+                            listaObj.AddRange(alumno.Evaluaciones);
+                            conteoEvaluaciones += alumno.Evaluaciones.Count;
+                        }
                     }
                 }
             return listaObj;
 
-        }
-
+        }*/
         private void CargarAsignatura()
         {
             foreach (var curso in Escuela.Cursos)

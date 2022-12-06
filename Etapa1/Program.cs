@@ -2,6 +2,7 @@
 using CoreEscuela.Util;
 using CoreEscuela;
 using CoreEscuela.Entidades;
+using CoreEscuela.App;
 
 internal class Program
 {
@@ -15,11 +16,27 @@ internal class Program
         Printer.DibujarLinea(20);
         System.Console.Beep(1000,2000);
         imprimirCusrosEscuela(engine.Escuela); // Introducir esta mejor funció para imprimir código
-        var listaObjetos = engine.GetObjetoEscuela();
 
-        var listaILugar = from obj in listaObjetos
+        var reporteador = new Reporteador(engine.GetDiccionarioObjetos());
+        var evaList= reporteador.GetListaEvaluaciones();
+        var lisAsig = reporteador.GetListaAsignaturas();
+        var listEvalXAsig= reporteador.GetDicEvXAsig();
+
+        //var dictmp = engine.GetDiccionarioObjetos();
+
+        //engine.ImprimirDiccionario(dictmp);
+
+        /*
+        var listaObjetos = engine.GetObjetoEscuela(
+            out int conteoEvaluaciones,
+            out int conteoAlumnos,
+            out int conteoCursos,
+            out int conteoAsignaturas
+        );
+
+       var listaILugar = from obj in listaObjetos
                             where obj is Alumno // También se pueden usar en lugar de ILugar, Alumno.
-                            select (Alumno) obj ; // Trae resultados de clase alumno.
+                            select (Alumno) obj ; // Trae resultados de clase alumno. */
 
         //engine.Escuela.LimpiarLugar();
 
